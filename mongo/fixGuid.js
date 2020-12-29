@@ -1,9 +1,4 @@
-uri=$1 # mongodb://user:pass@localhost:27017/holefeeder?authSource=holefeeder
-container=$2
-
-docker exec -it $container mongo $uri
-
-use holefeeder
+use holefeeder;
 
 var filterNull = { $or: [ { 'globalId': null }, { $and: [ { 'globalId' : { $type : 2 } }, { 'globalId': { $eq: '' } } ] } ] }
 var filter = { 'globalId' : { $type : 2 } }
