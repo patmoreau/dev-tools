@@ -1,0 +1,22 @@
+#cloud-config
+users:
+  - default
+  - name: ubuntu
+    gecos: Ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    shell: /bin/bash
+    ssh_import_id: None
+    lock_passwd: true
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAsBb1SJ+D8267a0zAvSnzXEif2LcengCqk4sYif1UfmMkKFkT/bk1AXEz2aGuROYDvbvgLNmE1qElUUS8ZEk8DlaJ54lVdPcDO5d/Wu3EGX8iGp04WoT0jsRTehQp0eDmSE5X5xSvIOUlaE3ega/I1vMZrKptiW9CPUYCtsuAnTEbteBKDtSYpZ07Vlv2zGZ2WNusFFEH7x61kRmmogHEqGDNI/pCtf8jEQYhJmqfzgXBIkkEKdSmc+Z6BAiTeEXgRTg/suxxDjEKuMW0NCUN9Q/jwGseW445O0AJyoG2BqQ+O61ikMAErJMiP6b3LfI96Kz1rzpti5lHVToMaMbrXYo+mUafz7/2TOGJiCedIZGg+jg1TvrLYnNXwY5A+nPWvTcJTMwVX0yzM0O11g9dSNe6KhIx7hwJ5Bygud/caQ5yUGc2ONGnCVpEXFHNeRWXR560yVT+pDKUvs0iIGpHh2C1MbV3coKRBbhcsfBB6KN4Rxfo5GfXN4B3HHv9bFxGz93ucy7bC2F/25FRKgwvwBplfdYViIrZsM7d72wjhTAKkodmsYNxGXcBLSJUCtfB+gvByZNz/wYQgiEURos4riTKBbP+FVxPHYrolIwWzLvyr8ASJb+dxb5rZtXRV8As3cVXv7LgmEj3EBRsisWBVejJHYptQsUlkI269suoR8E= SSH Patrick Moreau
+package_update: true
+package_upgrade: true
+packages:
+  - avahi-daemon
+write_files:
+  - path: /etc/skel/.bashrc
+    append: true
+    content: |
+    # custom
+    alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt auto-clean'
