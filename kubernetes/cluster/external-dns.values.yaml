@@ -1,0 +1,11 @@
+---
+provider: digitalocean
+digitalocean:
+  # create the API token at https://cloud.digitalocean.com/account/api/tokens
+  # needs read + write
+  apiToken: "e1ae998198d00d8fc973e5b827e83a2b8a51d2ed74c1c59019725dacf3726ab1"
+domainFilters:
+  # domains you want external-dns to be able to edit
+  - drifterapps.app
+rbac:
+  create: true

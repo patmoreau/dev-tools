@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mysql-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prd
+spec:
+  tls:
+  - hosts:
+    - adminer.drifterapps.app
+    secretName: adminer-tls
+  rules:
+    - host: adminer.drifterapps.app
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: adminer
+                port:
+                  number: 80
