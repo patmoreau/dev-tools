@@ -3,5 +3,6 @@ kind: Kustomization
 
 resources:
   - adminer-deployment.yaml
+  - seq-deployment.yaml
   - mysql-deployment.yaml
   - ingress-deployment.yaml
