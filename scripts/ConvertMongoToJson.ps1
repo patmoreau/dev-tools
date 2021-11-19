@@ -70,8 +70,8 @@ foreach($line in $mongoCashflows) {
     $cashflow = @{
         Id = Base64ToGuid($a.globalId.'$binary'.base64)
         EffectiveDate = [System.DateTime]::Parse($a.effectiveDate.'$date')
-        IntervalType = $a.intervalType
-        Frequency = $a.Frequency
+        IntervalType = $a.type
+        Frequency = $a.frequency
         Recurrence = $a.recurrence
         Amount = [System.Decimal]::new($a.amount.'$numberDecimal')
         Description = $a.description
@@ -108,6 +108,13 @@ foreach($line in $mongoTransactions) {
     $transactions += $transaction
 }
 $transactions | ConvertTo-Json | Out-File ./out/transactions.pure.json
+
+@{
+    accounts=$accounts
+    categories=$categories
+    cashflows=$cashflows
+    transactions=$transactions
+} | ConvertTo-Json -Depth 3 | Out-File ./out/holefeederData.json
 
 Write-Host "trg accounts: $($accounts.Count)"
 Write-Host "trg cashflows: $($cashflows.Count)"

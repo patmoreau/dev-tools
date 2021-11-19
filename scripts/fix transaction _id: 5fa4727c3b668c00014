@@ -1,0 +1,6 @@
+fix transaction _id: 5fa4727c3b668c0001494a87
+
+"userId":{"$oid":"5ecdf491367f4e00016c87eb"}
+"userId":{"$binary":{"base64":"Auhqg/YhRWOA0rZrUgYxKg==","subType":"04"}}
+
+userId: UUID("02e86a83f621456380d2b66b5206312a")
