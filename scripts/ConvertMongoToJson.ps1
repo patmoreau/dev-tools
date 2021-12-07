@@ -7,7 +7,7 @@ function Base64ToGuid
     [System.Array]::Reverse($b,6,2);
 
     $g = new-object -TypeName System.Guid -ArgumentList (,$b);
-    return $g;
+    return $g.ToString();
 }
 
 $mongoAccounts = Get-Content .\accounts.json

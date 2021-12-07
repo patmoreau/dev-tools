@@ -1,1 +1,1 @@
-scp root@drifterapps.com:holefeeder/backup/*.json .
+scp root@drifterapps.com:dev-tools/*.json .

@@ -4,5 +4,4 @@ container=$2
 docker exec -i $container mongoexport --uri $uri -c accounts > accounts.json
 docker exec -i $container mongoexport --uri $uri -c cashflows > cashflows.json
 docker exec -i $container mongoexport --uri $uri -c categories > categories.json
-docker exec -i $container mongoexport --uri $uri -c objectsData > objectsData.json
 docker exec -i $container mongoexport --uri $uri -c transactions > transactions.json

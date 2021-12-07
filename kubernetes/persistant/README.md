@@ -1,3 +1,5 @@
+# Create a secret
+
 ```bash
 echo -n '1f2d1e2e67df' | base64
 ```

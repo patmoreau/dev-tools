@@ -3,4 +3,3 @@ kind: Kustomization
 
 resources:
   - mysql-pv.yaml
-  - mysql-secrets.yaml
