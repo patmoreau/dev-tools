@@ -46,6 +46,3 @@ https://itnext.io/goodbye-docker-desktop-hello-minikube-3649f2a1c469
 https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/
 https://www.imore.com/how-turn-system-integrity-protection-macos
 https://itnext.io/setting-up-self-signed-https-access-to-local-dev-k8s-cluster-in-minikube-539bc62ad62f
-
-client_id: cb0c4647-6e99-4b0d-a2c3-0031456394b3
-client_secret: JdB7Q~JLu9TiAr3_~yzZhC0VPc5NA1~4sNQAo
